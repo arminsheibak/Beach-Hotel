@@ -2,11 +2,9 @@ import { Link } from "react-router-dom"
 import Hero from "../components/Hero"
 import Banner from "../components/Banner"
 import Services from "../components/Services"
-import { useContext } from "react"
-import RoomsContext from "../contexts/roomsContext"
+import FeaturedRoom from "../components/FeaturedRoom"
 
 const HomePage = () => {
-  const {rooms} = useContext(RoomsContext);
 
   return (
     <>
@@ -15,7 +13,8 @@ const HomePage = () => {
         <Link to='rooms/' className="btn-primary" >our rooms</Link>
       </Banner>
     </Hero>
-    <Services></Services>
+    <Services />
+    <FeaturedRoom />
     </>
     
   )
