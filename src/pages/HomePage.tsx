@@ -2,8 +2,12 @@ import { Link } from "react-router-dom"
 import Hero from "../components/Hero"
 import Banner from "../components/Banner"
 import Services from "../components/Services"
+import { useContext } from "react"
+import RoomsContext from "../contexts/roomsContext"
 
 const HomePage = () => {
+  const {rooms} = useContext(RoomsContext);
+
   return (
     <>
     <Hero>
