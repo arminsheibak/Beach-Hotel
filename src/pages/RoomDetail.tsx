@@ -28,7 +28,7 @@ const RoomDetail = () => {
     </Hero>
     <section className="single-room">
       <div className="single-room-images">
-      {room.fields.images.filter((image, index) => index !== 0).map((image) => <img key={image.fields.file.url} src={image.fields.file.url} />)}
+      {room.fields.images.filter((image, index) => index !== 0 && image.fields.file.url ).map((image) => <img key={image.fields.file.url} src={image.fields.file.url} />)}
       </div>
       <div className="single-room-info">
         <article className="description" >
