@@ -1,7 +1,14 @@
+import { Link } from "react-router-dom"
+import Hero from "../components/Hero"
+import Banner from "../components/Banner"
 
 const HomePage = () => {
   return (
-    <div>HomePage</div>
+    <Hero>
+      <Banner title='Luxurious Rooms' subtitle='Deluxe rooms starting at $299' >
+        <Link to='rooms/' className="btn-primary" >our rooms</Link>
+      </Banner>
+    </Hero>
   )
 }
 

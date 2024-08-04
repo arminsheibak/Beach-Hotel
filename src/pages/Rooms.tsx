@@ -1,7 +1,14 @@
+import { Link } from "react-router-dom"
+import Banner from "../components/Banner"
+import Hero from "../components/Hero"
 
 const Rooms = () => {
   return (
-    <div>Rooms</div>
+    <Hero heroClass="roomsHero" >
+      <Banner title="Our Rooms" >
+        <Link to='/' className="btn-primary" >Return Home</Link>
+      </Banner>
+    </Hero>
   )
 }
 
