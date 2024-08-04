@@ -1,9 +1,17 @@
 import { useContext } from "react"
 import RoomsContext from "../contexts/roomsContext"
 import RoomCard from "./RoomCard"
+import FilterQueryContext from "../contexts/roomsFiltersContext"
 
 const RoomsList = () => {
-  const {rooms, setRooms} = useContext(RoomsContext)
+  const {rooms} = useContext(RoomsContext)
+  const {filterQuery} = useContext(FilterQueryContext)
+
+  const filteredRoom = rooms.filter(room => {
+    if (filterQuery.type !== 'all')
+      return room.fields.type === filterQuery.type
+    return room
+  })
 
   if (rooms.length == 0) {
     return ( 
@@ -16,7 +24,7 @@ const RoomsList = () => {
   return (
     <section className="roomslist" >
       <div className="roomslist-center">
-        {rooms.map(room => <RoomCard key={room.sys.id} room={room} />)}
+        {filteredRoom.map(room => <RoomCard key={room.sys.id} room={room} />)}
       </div>
     </section>
   )
